@@ -19,17 +19,21 @@ function evenNumbers(num: number): void {
 // devuelva el array revertido. No se puede utilizar el método revert de la clase array
 // La cabecera de la función tendrá el siguiente aspecto: function myRevert(myArr)
 console.log("-----------------------------Ejercicio 3----------------------------")
-function myRevert(miArray){
-    let arrayRevertido= [];
-    for (let i= miArray.length - 1; i >= 0;i--) {
-      arrayRevertido.push(miArray[i]);
-    }
-    return arrayRevertido;
+  function myRevert(myArr) {
+    return myArr.reduce((arrayRevertido, elem) => [elem, ...arrayRevertido], []);
   }
   //main
   let arrayInicial = [10, 28, 34, 45, 59];
   let arrayRevertido = myRevert(arrayInicial);
-console.log(arrayRevertido); // [59,45,34,28,10]
+  console.log(arrayRevertido); // [59,45,34,28,10]
+
+//function myRevert(miArray){
+    //let arrayRevertido= [];
+  //   for (let i= miArray.length - 1; i >= 0;i--) {
+  //     arrayRevertido.push(miArray[i]);
+  //   }
+  //   return arrayRevertido;
+  // }
 
 // 4. Realizar una función que reciba como parámetro un array de strings que contenga
 // nombres de colores y te imprima en cada caso si el color está en el arcoíris o no.
@@ -40,13 +44,14 @@ function isRainbow(colors: string[]): void {
     let coloresRainbow = ["rojo", "naranja", "amarillo", "verde", "azul", "índigo", "violeta"];
     
        colors.forEach(color => {
-        if (coloresRainbow.includes(color)) {
+        let indice = coloresRainbow.indexOf(color.toLowerCase());
+        if (indice!==-1) {
           console.log(`${color} está en el arcoíris.`);
         } else {
-          console.log(`${color} NO está en el arcoíris.`);
+        console.log(`${color} no está en el arcoíris.`);
         }
-      });
-  }
+        });
+}
   
   // Ejemplo de uso:
   let arrayColores = ["rojo", "rosa", "malva", "cian", "azul"];

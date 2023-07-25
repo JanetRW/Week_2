@@ -1,3 +1,12 @@
+var __spreadArray = (this && this.__spreadArray) || function (to, from, pack) {
+    if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
+        if (ar || !(i in from)) {
+            if (!ar) ar = Array.prototype.slice.call(from, 0, i);
+            ar[i] = from[i];
+        }
+    }
+    return to.concat(ar || Array.prototype.slice.call(from));
+};
 // /////////////////////////////////Retos de Bucles For
 // 1. Guardar estos retos en un nuevo fichero. Ej: buclesFor.ts
 // 2. Realizar una función que imprima los números impares existentes hasta el número
@@ -17,17 +26,20 @@ evenNumbers(8);
 // devuelva el array revertido. No se puede utilizar el método revert de la clase array
 // La cabecera de la función tendrá el siguiente aspecto: function myRevert(myArr)
 console.log("-----------------------------Ejercicio 3----------------------------");
-function myRevert(miArray) {
-    var arrayRevertido = [];
-    for (var i = miArray.length - 1; i >= 0; i--) {
-        arrayRevertido.push(miArray[i]);
-    }
-    return arrayRevertido;
+function myRevert(myArr) {
+    return myArr.reduce(function (arrayRevertido, elem) { return __spreadArray([elem], arrayRevertido, true); }, []);
 }
 //main
 var arrayInicial = [10, 28, 34, 45, 59];
 var arrayRevertido = myRevert(arrayInicial);
 console.log(arrayRevertido); // [59,45,34,28,10]
+//function myRevert(miArray){
+//let arrayRevertido= [];
+//   for (let i= miArray.length - 1; i >= 0;i--) {
+//     arrayRevertido.push(miArray[i]);
+//   }
+//   return arrayRevertido;
+// }
 // 4. Realizar una función que reciba como parámetro un array de strings que contenga
 // nombres de colores y te imprima en cada caso si el color está en el arcoíris o no.
 // La cabecera de la función tendrá el siguiente aspecto: function isRainbow(colors)
@@ -36,11 +48,12 @@ function isRainbow(colors) {
     //creo un array con los colores del arco iris
     var coloresRainbow = ["rojo", "naranja", "amarillo", "verde", "azul", "índigo", "violeta"];
     colors.forEach(function (color) {
-        if (coloresRainbow.includes(color)) {
+        var indice = coloresRainbow.indexOf(color.toLowerCase());
+        if (indice !== -1) {
             console.log("".concat(color, " est\u00E1 en el arco\u00EDris."));
         }
         else {
-            console.log("".concat(color, " NO est\u00E1 en el arco\u00EDris."));
+            console.log("".concat(color, " no est\u00E1 en el arco\u00EDris."));
         }
     });
 }
