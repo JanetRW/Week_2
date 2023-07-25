@@ -52,10 +52,10 @@ isRainbow(arrayColores);
 // La cabecera de la función tendrá el siguiente aspecto: function add(myWords)
 // 6. Subir los cambios a GitHub.
 console.log("-----------------------------Ejercicio 5----------------------------");
-function add(arrayPalabras) {
+function add(myWords) {
     var sumaCaracteres = 0;
-    for (var _i = 0, arrayPalabras_1 = arrayPalabras; _i < arrayPalabras_1.length; _i++) {
-        var palabra = arrayPalabras_1[_i];
+    for (var _i = 0, myWords_1 = myWords; _i < myWords_1.length; _i++) {
+        var palabra = myWords_1[_i];
         sumaCaracteres += palabra.length;
     }
     return sumaCaracteres;
