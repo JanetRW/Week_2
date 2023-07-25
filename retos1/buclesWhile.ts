@@ -23,3 +23,24 @@ function hasEven(myNums: number[]): boolean {
 // todos los nombres empiezan por M.
 // La cabecera de la función tendrá el siguiente aspecto: function startWithM(myNames)
 // 4. Subir los cambios a GitHub.
+console.log("-----------------------------Ejercicio 3-----------------------------------")
+function startWithM(myNames: string[]): boolean {
+    for (let nombre of myNames) {
+        // Obtiene el primer carácter del nombre en minúsculas
+        let primerCaracter = nombre[0].toLowerCase();
+        
+        // Compara el primer carácter con 'm'
+        if (primerCaracter !== 'm') {
+          return false; 
+        }
+      }
+      return true;
+    }
+  
+  //main
+  let nombres1 = ['Maro', 'Mauricio', 'Margarita', 'Mariana'];
+  console.log(startWithM(nombres1)); 
+  
+  let nombres2 = ['Marcos', 'Lolo', 'Mario', 'Mercedes'];
+  console.log(startWithM(nombres2));
+  

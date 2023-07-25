@@ -17,8 +17,26 @@ function hasEven(myNums) {
 }
 //main
 var nums = [1, 2, 5, 9, 11, 13];
-console.log(hasEven(nums)); // Salida: true (porque el 10 es par)
+console.log(hasEven(nums)); // Salida: true numero 2 es par
 // 3. Realizar una función que reciba un array de nombres y te devuelva verdadero si y solo si
 // todos los nombres empiezan por M.
 // La cabecera de la función tendrá el siguiente aspecto: function startWithM(myNames)
 // 4. Subir los cambios a GitHub.
+console.log("-----------------------------Ejercicio 3-----------------------------------");
+function startWithM(myNames) {
+    for (var _i = 0, myNames_1 = myNames; _i < myNames_1.length; _i++) {
+        var nombre = myNames_1[_i];
+        // Obtiene el primer carácter del nombre en minúsculas
+        var primerCaracter = nombre[0].toLowerCase();
+        // Compara el primer carácter con 'm'
+        if (primerCaracter !== 'm') {
+            return false;
+        }
+    }
+    return true;
+}
+//main
+var nombres1 = ['Maro', 'Mauricio', 'Margarita', 'Mariana'];
+console.log(startWithM(nombres1));
+var nombres2 = ['Marcos', 'Lolo', 'Mario', 'Mercedes'];
+console.log(startWithM(nombres2));
