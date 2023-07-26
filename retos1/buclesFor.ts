@@ -62,7 +62,7 @@ function isRainbow(colors: string[]): void {
 // La cabecera de la función tendrá el siguiente aspecto: function add(myWords)
 // 6. Subir los cambios a GitHub.
 console.log("-----------------------------Ejercicio 5----------------------------")
-function add(myWords: string[]): number {
+export function add(myWords: string[]): number {
     let sumaCaracteres = 0;
   
     for (let palabra of myWords) {

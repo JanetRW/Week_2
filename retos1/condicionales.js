@@ -1,3 +1,6 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.isEven = void 0;
 //////////////////////////////Retos de Condicionales
 // 1. Trabajar en la rama repaso1 .En una carpeta nueva. Ej: retos1. Guarda estos retos en un
 // fichero .js Ej: condicionales.ts
@@ -96,6 +99,7 @@ function isEven(miNumero) {
         console.log("El numero es impar");
     }
 }
+exports.isEven = isEven;
 //main
 var numero1 = 54;
 var numero2 = 33;

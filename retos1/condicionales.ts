@@ -82,7 +82,7 @@ continent("Ghana");
 //- “El numero es par”, si el numero introducido como parámetro de entrada es par
 //- “El numero es impar”, si el numero introducido como parámetro de entrada es impar
 console.log("-----------------------------Ejercicio 4----------------------------")
-function isEven(miNumero: number): void {
+export function isEven(miNumero: number): void {
     if (miNumero % 2 === 0) {
       console.log("El numero es par");
     } else {

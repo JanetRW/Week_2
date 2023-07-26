@@ -1,3 +1,4 @@
+"use strict";
 var __spreadArray = (this && this.__spreadArray) || function (to, from, pack) {
     if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
         if (ar || !(i in from)) {
@@ -7,6 +8,8 @@ var __spreadArray = (this && this.__spreadArray) || function (to, from, pack) {
     }
     return to.concat(ar || Array.prototype.slice.call(from));
 };
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.add = void 0;
 // /////////////////////////////////Retos de Bucles For
 // 1. Guardar estos retos en un nuevo fichero. Ej: buclesFor.ts
 // 2. Realizar una función que imprima los números impares existentes hasta el número
@@ -73,6 +76,7 @@ function add(myWords) {
     }
     return sumaCaracteres;
 }
+exports.add = add;
 //main
 var palabrArr = ["retos", "buclesFor", "Javascript", "Typescript"];
 var resultado = add(palabrArr);
