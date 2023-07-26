@@ -1,1 +1,0 @@
-import {Mobile} from "./mobile"
