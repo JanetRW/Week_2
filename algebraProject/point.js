@@ -50,6 +50,54 @@ var Point = /** @class */ (function () {
         var distancia = Math.sqrt(Math.pow((this.x - anotherPoint.getX()), 2) + Math.pow((this.y - anotherPoint.getY()), 2)); //fórmula de la distancia euclidiana
         return distancia;
     };
+    ///////////////////Reto 3: Método Calcular Cuadrante
+    //   1. Programa un método denominado calculateQuadrant():number que devuelva el
+    //   cuadrante en el que se encuentra el punto.
+    //   El prototipo del método se muestra a continuación:
+    //   - Devuelve 0 si x o y son 0.
+    //   - Devuelve 1 si está en el primer cuadrante (x e y positivos).
+    //   - Devuelve 2 si está en el segundo cuadrante (x negativo e y positivo).
+    //   - Devuelve 3 si está en el tercer cuadrante (x e y negativos).
+    //   - Devuelve 4 si está en el cuarto cuadrante (x positivo e y negativo).
+    // Método que devuelve cuadrante del punto
+    Point.prototype.calculateQuadrant = function () {
+        if (this.x === 0 || this.y === 0) {
+            return 0;
+        }
+        else if (this.x > 0 && this.y > 0) {
+            return 1;
+        }
+        else if (this.x < 0 && this.y > 0) {
+            return 2;
+        }
+        else if (this.x < 0 && this.y < 0) {
+            return 3;
+        }
+        else {
+            return 4;
+        }
+    };
+    ///////////////////Reto 4: Calcular el Punto Más Cercano
+    //1. Programa un método denominado calculateNearest(points : Point[]) : Point, que reciba
+    //como parámetro un array de objetos de la clase Point y devuelva una referencia al objeto
+    //de dicho array que esté más cercano al punto actual.
+    //NOTA: Utilizar para ello el método calculateDistance implementado en el reto3.
+    Point.prototype.calculateNearest = function (points) {
+        if (points.length === 0) {
+            console.log("El array está vacío");
+        }
+        var pointCerca = points[0];
+        var minDistancia = this.calculateDistance(points[0]);
+        for (var _i = 0, points_1 = points; _i < points_1.length; _i++) {
+            var point = points_1[_i];
+            var distance = this.calculateDistance(point);
+            if (distance < minDistancia) {
+                minDistancia = distance;
+                pointCerca = point;
+            }
+        }
+        return pointCerca;
+    };
     return Point;
 }());
 exports.Point = Point;
