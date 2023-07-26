@@ -7,6 +7,7 @@ exports.isEven = void 0;
 // 2. Realizar una función que dada una fecha de nacimiento te devuelva el signo zodiacal.
 // La fecha de nacimiento vendrá indicada por dos números: dia y mes.
 // La cabecera de la función tendrá el siguiente aspecto: function zodiac(day, month)
+console.log("-----------------------------Retos Condicionales----------------------------");
 console.log("-----------------------------Ejercicio 2----------------------------");
 function zodiac(day, month) {
     if ((day >= 21 && month === 3) || (day <= 19 && month === 4)) {
@@ -50,8 +51,8 @@ function zodiac(day, month) {
     }
 }
 // main
-var signoZodiacal = zodiac(24, 3); //Día de nacimiento:24, mes:3
-console.log(signoZodiacal); // Salida: "Aries"
+var miSignoZodiacal = zodiac(24, 3); //Día de nacimiento:24, mes:3
+console.log(miSignoZodiacal); // Salida: "Aries"
 //3.Realizar un procedimiento que dado el nombre de un país te imprima en que continente
 // estás. (Max 5 países por continente).
 // La cabecera del procedimiento tendrá el siguiente aspecto: function continent(country)
@@ -86,7 +87,7 @@ continent("Francia");
 continent("India");
 continent("Australia");
 continent("Argentina");
-continent("Ghana");
+continent("Suiza");
 //4. Realizar una función que te imprima por consola el siguiente mensaje:
 //- “El numero es par”, si el numero introducido como parámetro de entrada es par
 //- “El numero es impar”, si el numero introducido como parámetro de entrada es impar

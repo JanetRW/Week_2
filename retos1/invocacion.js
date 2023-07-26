@@ -14,7 +14,6 @@ console.log("----------------------------Reto de Invocación--------------------
 // main
 var condicionales_1 = require("./condicionales");
 var buclesFor_1 = require("./buclesFor");
-//let arrays: string[][] = [
 var array1 = ["Casa", "Coche", "Ciudad", "Cesta"];
 var array2 = ["Barco", "Baca", "Bicicleta", "Balon", "Bisiesto", "Brasil"];
 var array3 = ["Venezuela", "Veneno", "Voltaje"];

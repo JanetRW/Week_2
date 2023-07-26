@@ -6,15 +6,16 @@
 console.log("---------------------------Retos Bucles While------------------------------");
 console.log("-----------------------------Ejercicio 2-----------------------------------")
 function hasEven(myNums: number[]): boolean {
-    // Recorremos el array de números
-    for (let numero of myNums) {
-        if (numero % 2 === 0) {
-        return true;
-      }
+        let i = 0;
+    while (i < myNums.length) {
+        if (myNums[i] % 2 === 0) {
+            return true;
+        }
+        i++;
     }
     return false;
-  }
-  
+}
+ 
   //main
   let nums = [1, 2, 5, 9, 11, 13];
   console.log(hasEven(nums)); // Salida: true numero 2 es par
@@ -25,22 +26,22 @@ function hasEven(myNums: number[]): boolean {
 // 4. Subir los cambios a GitHub.
 console.log("-----------------------------Ejercicio 3-----------------------------------")
 function startWithM(myNames: string[]): boolean {
-    for (let nombre of myNames) {
-        // Obtiene el primer carácter del nombre en minúsculas
-        let primerCaracter = nombre[0].toLowerCase();
-        
-        // Compara el primer carácter con 'm'
-        if (primerCaracter !== 'm') {
-          return false; 
+        let inicio = 0;
+      
+        while (inicio < myNames.length) {
+          if (myNames[inicio][0] !== 'M') {
+            return false;
+          }
+      
+          inicio++;
         }
-      }
-      return true;
-    }
-  
+      
+        return true;
+      }  
   //main
   let nombres1 = ['Maro', 'Mauricio', 'Margarita', 'Mariana'];
-  console.log(startWithM(nombres1)); 
+  console.log(startWithM(nombres1)); //true
   
-  let nombres2 = ['Marcos', 'Lolo', 'Mario', 'Mercedes'];
-  console.log(startWithM(nombres2));
+  let nombres2 = ['Marcos', 'Lolo', 'Nina', 'Mercedes'];
+  console.log(startWithM(nombres2));//false
   

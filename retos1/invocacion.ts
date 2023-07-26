@@ -9,7 +9,6 @@
 // También tendrás que importar dichos ficheros en el fichero actual.
 // Subir los cambios a GitHub. Y hacer merge con la rama principal.
 console.log("----------------------------Reto de Invocación-----------------------")
-// main
 import { isEven } from "./condicionales"
 import { add } from "./buclesFor"
 

@@ -6,12 +6,12 @@
 console.log("---------------------------Retos Bucles While------------------------------");
 console.log("-----------------------------Ejercicio 2-----------------------------------");
 function hasEven(myNums) {
-    // Recorremos el array de números
-    for (var _i = 0, myNums_1 = myNums; _i < myNums_1.length; _i++) {
-        var numero = myNums_1[_i];
-        if (numero % 2 === 0) {
+    var i = 0;
+    while (i < myNums.length) {
+        if (myNums[i] % 2 === 0) {
             return true;
         }
+        i++;
     }
     return false;
 }
@@ -24,14 +24,12 @@ console.log(hasEven(nums)); // Salida: true numero 2 es par
 // 4. Subir los cambios a GitHub.
 console.log("-----------------------------Ejercicio 3-----------------------------------");
 function startWithM(myNames) {
-    for (var _i = 0, myNames_1 = myNames; _i < myNames_1.length; _i++) {
-        var nombre = myNames_1[_i];
-        // Obtiene el primer carácter del nombre en minúsculas
-        var primerCaracter = nombre[0].toLowerCase();
-        // Compara el primer carácter con 'm'
-        if (primerCaracter !== 'm') {
+    var inicio = 0;
+    while (inicio < myNames.length) {
+        if (myNames[inicio][0] !== 'M') {
             return false;
         }
+        inicio++;
     }
     return true;
 }

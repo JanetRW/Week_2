@@ -1,13 +1,4 @@
 "use strict";
-var __spreadArray = (this && this.__spreadArray) || function (to, from, pack) {
-    if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
-        if (ar || !(i in from)) {
-            if (!ar) ar = Array.prototype.slice.call(from, 0, i);
-            ar[i] = from[i];
-        }
-    }
-    return to.concat(ar || Array.prototype.slice.call(from));
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.add = void 0;
 // /////////////////////////////////Retos de Bucles For
@@ -15,6 +6,7 @@ exports.add = void 0;
 // 2. Realizar una función que imprima los números impares existentes hasta el número
 // indicado como parámetro de entrada.
 // La cabecera de la función tendrá el siguiente aspecto: function evenNumbers(num)
+console.log("-----------------------------Retos Bucles For----------------------------");
 console.log("-----------------------------Ejercicio 2----------------------------");
 function evenNumbers(num) {
     for (var i = 1; i <= num; i++) {
@@ -30,37 +22,41 @@ evenNumbers(8);
 // La cabecera de la función tendrá el siguiente aspecto: function myRevert(myArr)
 console.log("-----------------------------Ejercicio 3----------------------------");
 function myRevert(myArr) {
-    return myArr.reduce(function (arrayRevertido, elem) { return __spreadArray([elem], arrayRevertido, true); }, []);
+    var arrayRevertido = [];
+    for (var i = myArr.length - 1; i >= 0; i--) {
+        arrayRevertido.push(myArr[i]);
+    }
+    return arrayRevertido;
 }
 //main
 var arrayInicial = [10, 28, 34, 45, 59];
 var arrayRevertido = myRevert(arrayInicial);
 console.log(arrayRevertido); // [59,45,34,28,10]
-//function myRevert(miArray){
-//let arrayRevertido= [];
-//   for (let i= miArray.length - 1; i >= 0;i--) {
-//     arrayRevertido.push(miArray[i]);
-//   }
-//   return arrayRevertido;
-// }
 // 4. Realizar una función que reciba como parámetro un array de strings que contenga
 // nombres de colores y te imprima en cada caso si el color está en el arcoíris o no.
 // La cabecera de la función tendrá el siguiente aspecto: function isRainbow(colors)
 console.log("-----------------------------Ejercicio 4----------------------------");
 function isRainbow(colors) {
-    //creo un array con los colores del arco iris
-    var coloresRainbow = ["rojo", "naranja", "amarillo", "verde", "azul", "índigo", "violeta"];
-    colors.forEach(function (color) {
-        var indice = coloresRainbow.indexOf(color.toLowerCase());
-        if (indice !== -1) {
+    var rainbowColors = ["rojo", "naranja", "amarillo", "verde", "azul", "añil", "violeta"];
+    for (var _i = 0, colors_1 = colors; _i < colors_1.length; _i++) {
+        var color = colors_1[_i];
+        var colorArcoIris = false;
+        for (var _a = 0, rainbowColors_1 = rainbowColors; _a < rainbowColors_1.length; _a++) {
+            var colores = rainbowColors_1[_a];
+            if (color.toLowerCase() === colores) {
+                colorArcoIris = true;
+                break;
+            }
+        }
+        if (colorArcoIris) {
             console.log("".concat(color, " est\u00E1 en el arco\u00EDris."));
         }
         else {
             console.log("".concat(color, " no est\u00E1 en el arco\u00EDris."));
         }
-    });
+    }
 }
-// Ejemplo de uso:
+// Main
 var arrayColores = ["rojo", "rosa", "malva", "cian", "azul"];
 isRainbow(arrayColores);
 // 5. Realizar una función que te devuelva la suma del numero de caracteres de las palabras
@@ -69,15 +65,15 @@ isRainbow(arrayColores);
 // 6. Subir los cambios a GitHub.
 console.log("-----------------------------Ejercicio 5----------------------------");
 function add(myWords) {
-    var sumaCaracteres = 0;
+    var sumatoriaCaracters = 0;
     for (var _i = 0, myWords_1 = myWords; _i < myWords_1.length; _i++) {
-        var palabra = myWords_1[_i];
-        sumaCaracteres += palabra.length;
+        var word = myWords_1[_i];
+        sumatoriaCaracters += word.length;
     }
-    return sumaCaracteres;
+    return sumatoriaCaracters;
 }
 exports.add = add;
 //main
 var palabrArr = ["retos", "buclesFor", "Javascript", "Typescript"];
 var resultado = add(palabrArr);
-console.log(resultado);
+console.log(resultado); //34
