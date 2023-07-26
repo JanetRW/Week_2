@@ -26,11 +26,16 @@ console.log("Moviles actualizados en la colección:");
 console.log(myCollection.getMobiles());
 console.log("Precios Totales actualizados en la colección:");
 console.log(myCollection.getTotalPrice());
-// Reto 2: Añadir un Método Privado
-// 1. Crear un método privado denominado totalPriceCalculation sin parámetros de entrada,
-// que te calcule el precio total de la colección.
-// NOTA: Debe realizar la suma de los precios de todos los objetos almacenados en el
-// atributo mobiles.
-// 2. En el constructor llamar totalPriceCalculation y guardarlo en su atributo correspondiente.
-// 3. Probar de nuevo el método getPrice de la clase en el fichero mobileCollectionTest.ts
+///////////////////////Reto 2: Añadir un Método Privado
+//3. Probar de nuevo el método getPrice de la clase en el fichero mobileCollectionTest.ts
 // 4. Subir los cambios a GitHub.
+//En realidad, el método que queremos probar es getPrice,
+//pero dicho método no existe en la clase MobileCollection.Verificamos el método getTotalPrice funcione correctamente después de haber añadido el método privado totalPriceCalculation en la clase MobileCollection.
+//Por lo tanto, no necesitamos realizar ninguna prueba específica para el método getPrice , ya que dicho método no forma parte de la clase MobileCollection
+// Probamos el método getTotalPrice para obtener el precio total de la colección
+console.log("Total price of the collection:");
+console.log(myCollection.getTotalPrice()); //Muestra precio total de los móviles en la colección
+////Reto 3: Añadir un Método Público
+//2. Probar el nuevo método printCollection de la clase en el fichero mobileCollectionTest.ts
+//3. Subir los cambios a GitHub. Y hacer merge con la rama principal.
+myCollection.printCollection();

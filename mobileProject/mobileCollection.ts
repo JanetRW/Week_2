@@ -46,4 +46,37 @@ export class MobileCollection{
       public setTotalPrice(totalPrice: number): void {
         this.totalPrice = totalPrice;
       }
-    }
+
+// ///////////////////////////Reto 3: Añadir un Método Público
+// 1. Crear un nuevo método denominado printCollection que recorra todos los objetos del
+// atributo mobile y los muestre por consola de la siguiente manera :
+// This is all my mobiles:
+// The characteristics of the mobile name are:
+// • Name: name
+// • Trademark: tradeMark
+// • model: model
+// • Color: color
+// • Price: price
+// The characteristics of the mobile name are:
+// • Name: name
+// • Trademark: tradeMark
+// • model: model
+// • Color: color
+// • Price: price
+// ……
+// Price overall: totalPrice“
+public printCollection(): void {
+  console.log("----------------------------------------------");
+  console.log("This is all my mobiles:");
+  this.mobiles.forEach((mobile) => {
+    console.log("----------------------------------------------");
+    console.log(`The characteristics of the mobile ${mobile.getName()} are:`);
+    console.log(`Name: ${mobile.getName()}`);
+    console.log(`Trademark: ${mobile.getTrademark()}`);
+    console.log(`Model: ${mobile.getModel()}`);
+    console.log(`Color: ${mobile.getColor()}`);
+    console.log(`Price: ${mobile.getPrice()}`);
+  });
+  console.log(`Price overall: ${this.getTotalPrice()}`);
+  }
+}

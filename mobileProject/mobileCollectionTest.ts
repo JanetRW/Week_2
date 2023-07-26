@@ -42,3 +42,9 @@ console.log(myCollection.getTotalPrice());
 // Probamos el método getTotalPrice para obtener el precio total de la colección
 console.log("Total price of the collection:");
 console.log(myCollection.getTotalPrice()); //Muestra precio total de los móviles en la colección
+
+////Reto 3: Añadir un Método Público
+//2. Probar el nuevo método printCollection de la clase en el fichero mobileCollectionTest.ts
+//3. Subir los cambios a GitHub. Y hacer merge con la rama principal.
+
+myCollection.printCollection();

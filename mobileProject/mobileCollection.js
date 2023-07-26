@@ -10,13 +10,18 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.MobileCollection = void 0;
 var MobileCollection = /** @class */ (function () {
+    // ////////////////////////////////Reto 2: Añadir un Método Privado
+    // 1. Crear un método privado denominado totalPriceCalculation sin parámetros de entrada,
+    // que te calcule el precio total de la colección.
+    // NOTA: Debe realizar la suma de los precios de todos los objetos almacenados en el
+    // atributo mobiles.
+    // 2. En el constructor llamar totalPriceCalculation y guardarlo en su atributo correspondiente.
     function MobileCollection(mobiles) {
         this.mobiles = mobiles;
-        this.calcularTotalPrice();
+        this.totalPrice = this.totalPriceCalculation();
     }
-    // Método para calcular el precio total a partir de los precios de los móviles en el array
-    MobileCollection.prototype.calcularTotalPrice = function () {
-        this.totalPrice = this.mobiles.reduce(function (total, mobile) { return total + mobile.getPrice(); }, 0);
+    MobileCollection.prototype.totalPriceCalculation = function () {
+        return this.mobiles.reduce(function (total, mobile) { return total + mobile.getPrice(); }, 0);
     };
     // Getters
     MobileCollection.prototype.getMobiles = function () {
@@ -28,10 +33,42 @@ var MobileCollection = /** @class */ (function () {
     // Setters
     MobileCollection.prototype.setMobiles = function (mobiles) {
         this.mobiles = mobiles;
-        this.calcularTotalPrice();
+        this.totalPrice = this.totalPriceCalculation();
     };
     MobileCollection.prototype.setTotalPrice = function (totalPrice) {
         this.totalPrice = totalPrice;
+    };
+    // ///////////////////////////Reto 3: Añadir un Método Público
+    // 1. Crear un nuevo método denominado printCollection que recorra todos los objetos del
+    // atributo mobile y los muestre por consola de la siguiente manera :
+    // This is all my mobiles:
+    // The characteristics of the mobile name are:
+    // • Name: name
+    // • Trademark: tradeMark
+    // • model: model
+    // • Color: color
+    // • Price: price
+    // The characteristics of the mobile name are:
+    // • Name: name
+    // • Trademark: tradeMark
+    // • model: model
+    // • Color: color
+    // • Price: price
+    // ……
+    // Price overall: totalPrice“
+    MobileCollection.prototype.printCollection = function () {
+        console.log("----------------------------------------------");
+        console.log("This is all my mobiles:");
+        this.mobiles.forEach(function (mobile) {
+            console.log("----------------------------------------------");
+            console.log("The characteristics of the mobile ".concat(mobile.getName(), " are:"));
+            console.log("Name: ".concat(mobile.getName()));
+            console.log("Trademark: ".concat(mobile.getTrademark()));
+            console.log("Model: ".concat(mobile.getModel()));
+            console.log("Color: ".concat(mobile.getColor()));
+            console.log("Price: ".concat(mobile.getPrice()));
+        });
+        console.log("Price overall: ".concat(this.getTotalPrice()));
     };
     return MobileCollection;
 }());
